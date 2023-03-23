@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<body>
+<table>
+
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task,number : ${tasks}">
+        <td th:text="${task.id}"></td>
+        <td th:text="${task.description}" th:id="'description_' + ${task.id}"></td>
+
+    </tr>
+
+    </tbody>
+
+
+</table>
+</body>
+</html>
