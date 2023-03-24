@@ -21,14 +21,14 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public SpringResourceTemplateResolver templateResolver(){
+    public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
         resolver.setApplicationContext(applicationContext);
-        resolver.setPrefix("/html");
+        resolver.setPrefix("/html/");
         resolver.setSuffix(".html");
         resolver.setTemplateMode(TemplateMode.HTML);
         resolver.setCacheable(false);
-        return  resolver;
+        return resolver;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public SpringTemplateEngine engine(){
+    public SpringTemplateEngine engine() {
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setTemplateResolver(templateResolver());
         engine.setEnableSpringELCompiler(true);
@@ -46,20 +46,12 @@ public class WebConfig implements WebMvcConfigurer {
 
 
     @Bean
-    public ThymeleafViewResolver viewResolver(){
+    public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(engine());
         return viewResolver;
     }
 
-
-
-    @Override
-    public void configureViewResolvers(ViewResolverRegistry registry) {
-        ThymeleafViewResolver resolver = new ThymeleafViewResolver();
-        resolver.setTemplateEngine(engine());
-        registry.viewResolver(resolver);
-    }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -67,8 +59,6 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler(("/style/**")).addResourceLocations("/style/");
         registry.addResourceHandler(("/script/**")).addResourceLocations("/script/");
     }
-
-
 
 
 }
