@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import org.example.domain.Status;
+import org.example.controller.domain.Status;
 
 public class TaskInfo {
 

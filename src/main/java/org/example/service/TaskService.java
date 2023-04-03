@@ -1,8 +1,8 @@
 package org.example.service;
 
 import org.example.dao.TaskDAO;
-import org.example.domain.Status;
-import org.example.domain.Task;
+import org.example.controller.domain.Status;
+import org.example.controller.domain.Task;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

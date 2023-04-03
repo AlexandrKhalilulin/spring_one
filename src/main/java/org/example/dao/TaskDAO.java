@@ -1,6 +1,6 @@
 package org.example.dao;
 
-import org.example.domain.Task;
+import org.example.controller.domain.Task;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.controller.domain;
 
 public enum Status {
     IN_PROGRESS,

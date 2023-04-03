@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import org.example.domain.Task;
+import org.example.controller.domain.Task;
 import org.example.service.TaskService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
